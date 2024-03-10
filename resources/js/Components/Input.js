@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
+
 export default function Input({
     type = 'text',
     name,
@@ -9,6 +10,10 @@ export default function Input({
     required,
     isFocused,
     handleChange,
+    defaultValue,
+    variant = "primary",
+    placeholder,
+    isError,
 }) {
     const input = useRef();
 
@@ -25,13 +30,15 @@ export default function Input({
                 name={name}
                 value={value}
                 className={
-                    `border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm ` +
+                    `rounded-2xl bg-form-bg py-[13px] px-7 w-full input-${variant} ${className} ` +
                     className
                 }
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
-                onChange={(e) => handleChange(e)}
+                placeholder={placeholder}
+                defaultValue={defaultValue}
+                // onChange={(e) => handleChange(e)}
             />
         </div>
     );

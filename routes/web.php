@@ -24,10 +24,17 @@ use Inertia\Inertia;
 //     ]);
 // });
 
-Route::redirect('/', '/login', 301);
+Route::redirect('/', '/prototype/login', 301);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::prefix('prototype')->group(function () {
+    Route::get('/login', function () {
+        return Inertia::render('Prototype/Login');
+    });
+});
+
+
+require __DIR__ . '/auth.php';

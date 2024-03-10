@@ -1,3 +1,14 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+   .flex::before,
+        .flex::after {
+            display: none !important;
+    }
+
+.input-primary
+{
+    @apply focus:bg-black focus:outline-alerange focus:outline-none;
+}
+

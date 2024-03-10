@@ -1,0 +1,4 @@
+.input-primary
+{
+    @apply focus:bg-black focus:outline-alerange focus:outline-none;
+}
